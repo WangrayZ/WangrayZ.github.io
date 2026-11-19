@@ -1,0 +1,23 @@
+# 依赖与构建产物
+/my-portfolio/node_modules/
+/my-portfolio/_site/
+/.pnpm-store/
+
+# 原始素材与备份（体积大，不随站点发布）
+/建筑设计课程/
+/Otherwork/
+/智绘视界SRTP/
+/摄影/
+/_legacy/
+/assets/
+
+# 根目录单页版（Eleventy 为发布源）
+/index.html
+/style.css
+/main.js
+/i18n.js
+
+# 杂项
+*.log
+Thumbs.db
+.DS_Store

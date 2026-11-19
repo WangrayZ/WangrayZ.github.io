@@ -1,0 +1,95 @@
+﻿---
+layout: base.njk
+title: 作品集 2024—2026
+hideNav: true
+nav: home
+---
+<div class="cover">
+{% include "home-cover.njk" %}
+</div>
+
+<section class="sec" id="works" style="padding-top:clamp(48px,7vw,96px)">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="sec-num">01</span>
+      <h2 class="sec-title">作品</h2>
+      <p class="sec-en">Selected Works</p>
+    </div>
+
+    <p class="lede reveal" style="margin-bottom:clamp(28px,4vw,48px)">课程设计以作品集的方式展开：场地、策略、空间与图纸依次呈现。竞赛、工作营与研究以成果为主，直接给出最终图版与可下载的原件。</p>
+
+    <section class="group">
+      <div class="group-head reveal">
+        <span class="n">01</span>
+        <h2>建筑设计</h2>
+        <span class="count">2 项 · 课程设计</span>
+      </div>
+      {% for p in collections.projects %}{% if p.data.group == 'arch' %}
+      <a class="item reveal" href="{{ p.url }}">
+        <div class="frame">
+          <img src="{{ p.data.cover }}" alt="{{ p.data.title }}" loading="lazy">
+          <span class="no">{{ '0' ~ p.data.order if p.data.order < 10 else p.data.order }}</span>
+        </div>
+        <div class="item-body">
+          <p class="item-kicker">{{ p.data.kicker }}</p>
+          <h3>{{ p.data.title }}</h3>
+          <p class="kind">{{ p.data.kind }}</p>
+          <p class="desc">{{ p.data.desc }}</p>
+          <span class="go">查看项目 <i>→</i></span>
+        </div>
+      </a>
+      {% endif %}{% endfor %}
+    </section>
+
+    <section class="group">
+      <div class="group-head reveal">
+        <span class="n">02</span>
+        <h2>竞赛 / 工作营</h2>
+        <span class="count">2 项</span>
+      </div>
+      {% for p in collections.projects %}{% if p.data.group == 'comp' %}
+      <a class="item reveal" href="{{ p.url }}">
+        <div class="frame">
+          <img src="{{ p.data.cover }}" alt="{{ p.data.title }}" loading="lazy">
+          <span class="no">{{ '0' ~ p.data.order if p.data.order < 10 else p.data.order }}</span>
+        </div>
+        <div class="item-body">
+          <p class="item-kicker">{{ p.data.kicker }}</p>
+          <h3>{{ p.data.title }}</h3>
+          <p class="kind">{{ p.data.kind }}</p>
+          <p class="desc">{{ p.data.desc }}</p>
+          <span class="go">查看{{ '图版' if p.data.group == 'comp' else '项目' }} <i>→</i></span>
+        </div>
+      </a>
+      {% endif %}{% endfor %}
+    </section>
+
+    <section class="group">
+      <div class="group-head reveal">
+        <span class="n">03</span>
+        <h2>研究</h2>
+        <span class="count">1 项 · 国家级大创</span>
+      </div>
+      {% for p in collections.projects %}{% if p.data.group == 'research' %}
+      <a class="item reveal" href="{{ p.url }}">
+        <div class="frame">
+          <img src="{{ p.data.cover }}" alt="{{ p.data.title }}" loading="lazy">
+          <span class="no">{{ '0' ~ p.data.order if p.data.order < 10 else p.data.order }}</span>
+        </div>
+        <div class="item-body">
+          <p class="item-kicker">{{ p.data.kicker }}</p>
+          <h3>{{ p.data.title }}</h3>
+          <p class="kind">{{ p.data.kind }}</p>
+          <p class="desc">{{ p.data.desc }}</p>
+          <span class="go">查看项目 <i>→</i></span>
+        </div>
+      </a>
+      {% endif %}{% endfor %}
+    </section>
+
+    <div class="dir-more reveal" style="border-top:1px solid var(--line);margin-top:clamp(24px,3vw,40px)">
+      <span>摄影、经历与完整素材</span>
+      <a href="/photography/">13 幅摄影 →　</a>
+    </div>
+  </div>
+</section>
